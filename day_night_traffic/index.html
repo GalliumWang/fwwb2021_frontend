@@ -7,7 +7,7 @@
 <link rel='stylesheet' href='https://cdn.oesmith.co.uk/morris-0.5.1.css'><link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <h3 id="title" class="text-primary text-center">
+  <h3 id="title" class="text-info text-center">
     早晚高峰客流分析
   </h3>
 
@@ -22,10 +22,10 @@
       <div id="chart"></div>
     </div>
     <div id="function-button" class="col-sm-2 text-center">
-      <button type="button" class="btn btn-primary function-button">区域图</button>
-      <button type="button" class="btn btn-primary function-button">折线图</button>
-      <button type="button" class="btn btn-primary function-button">柱状图</button>
-      <button type="button" class="btn btn-primary function-button">堆栈图</button>
+      <button onclick="switch_chart_type(this);" type="button" class="btn btn-primary function-button">区域图</button>
+      <button onclick="switch_chart_type(this);" type="button" class="btn btn-secondary function-button">折线图</button>
+      <button onclick="switch_chart_type(this);" type="button" class="btn btn-success function-button">柱状图</button>
+      <button onclick="switch_chart_type(this);" type="button" class="btn btn-danger function-button">堆栈图</button>
     </div>
   </div>
 </body>

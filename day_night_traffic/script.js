@@ -1,3 +1,28 @@
+function switch_chart_type(clickedElement){
+  $("#chart").empty();
+  config.stacked = false;
+  // console.log(clickedElement.innerText);
+  switch (clickedElement.innerText) {
+    case "区域图":
+      Morris.Area(config);
+      break;
+    case "折线图":
+      Morris.Line(config);
+      break;
+    case "柱状图":
+      Morris.Bar(config);
+      break;
+    case "堆栈图":
+      config.stacked = true;
+      Morris.Bar(config);
+      break;
+    default:
+      console.error("undefined chart type");
+      break;
+  }
+}
+
+
 var data = [
       { y: '1月', a: 50, b: 90},
       { y: '2月', a: 65,  b: 75},
@@ -31,13 +56,6 @@ var data = [
 config.element = 'chart';
 Morris.Area(config);
 
-// config.element = 'line-chart';
-// Morris.Line(config);
-// config.element = 'bar-chart';
-// Morris.Bar(config);
-// config.element = 'stacked';
-// config.stacked = true;
-// Morris.Bar(config);
 
 function attr_sum(data,attr){
   var sum=0;

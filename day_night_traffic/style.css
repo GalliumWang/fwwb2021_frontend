@@ -1,6 +1,17 @@
 body{
-    background-image: url('../static/subway_background.jpg');
     /* opacity: 30%; */
+}
+
+body::before{
+    background-image: url('../static/image/subway_background.jpg');
+    content: "";
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
 }
 
 #title{
