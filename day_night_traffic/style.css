@@ -9,6 +9,11 @@
     margin-bottom: 2em;
 }
 
+#pie-chart{
+    margin-top: 3em;
+}
+
+
 #chart{
     max-height: 300px;
 }
