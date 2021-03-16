@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh" >
+<head>
+  <meta charset="UTF-8">
+  <title>早晚高峰客流分析</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdn.oesmith.co.uk/morris-0.5.1.css'><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h3 id="title" class="text-primary text-center">
+    早晚高峰客流分析
+  </h3>
+
+
+  <div class="row">
+    <div id="pie-chart-area" class="col-sm-3 text-center">
+      <label id="pie-chart-label" class="label label-success">全年早晚高峰占比</label>
+      <div id="pie-chart"></div>
+    </div>
+    <div id="chart-area" class="col-sm-6 text-center">
+      <label id="chart-label" class="label label-success">区域图</label>
+      <div id="chart"></div>
+    </div>
+  </div>
+</body>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

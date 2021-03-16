@@ -1,0 +1,14 @@
+#title{
+    margin-bottom: 2em;
+    margin-top: 10vh;
+}
+
+#chart-label{
+    display: inline-block;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+
+#chart{
+    max-height: 300px;
+}
