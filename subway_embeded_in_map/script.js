@@ -3,6 +3,145 @@
 // lineData & stops come from geojson files
 // downloaded from NYC's Open Data project.
 
+
+// line data
+var lineData = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "G",
+        "url": "http://web.mta.info/nyct/service/",
+        "rt_symbol": "G",
+        "objectid": "753",
+        "id": "2000393",
+        "shape_len": "2438.20024902"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -73.99487524803018,
+            40.6802035460625
+          ],
+          [
+            -73.99427469414127,
+            40.68081016270495
+          ],
+          [
+            -73.9942168049715,
+            40.68088280879707
+          ],
+          [
+            -73.9941660725898,
+            40.68094977567929
+          ],
+          [
+            -73.99411471677327,
+            40.681016234616614
+          ],
+          [
+            -73.9940635700395,
+            40.68108477012707
+          ],
+          [
+            -73.99401368539809,
+            40.6811526149855
+          ],
+          [
+            -73.99396235156854,
+            40.68122105948818
+          ],
+          [
+            -73.99391126703496,
+            40.681291555351955
+          ],
+          [
+            -73.99386095364044,
+            40.68136199360065
+          ],
+          [
+            -73.99381034674546,
+            40.6814328424454
+          ],
+          [
+            -73.99375975375001,
+            40.68150569581264
+          ],
+          [
+            -73.99370975453519,
+            40.681577696402535
+          ],
+          [
+            -73.99365946654771,
+            40.68165011029012
+          ],
+          [
+            -73.99360890506807,
+            40.68172392984253
+          ],
+          [
+            -73.99355835994191,
+            40.68179873453544
+          ],
+          [
+            -73.99350838602531,
+            40.681873696827665
+          ],
+          [
+            -73.99066967148987,
+            40.6860692553028
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+
+//stop data
+var stops = {
+  "type": "FeatureCollection",
+  "features": [    {
+      "type": "Feature",
+      "properties": {
+        "name": "Astor Pl",
+        "url": "http://web.mta.info/nyct/service/",
+        "line": "4-6-6 Express",
+        "objectid": "1",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99106999861966,
+          40.73005400028978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "url": "http://web.mta.info/nyct/service/",
+        "line": "4-6-6 Express",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00019299927328,
+          40.71880300107709
+        ]
+      }
+    }]
+
+};
+
+
+
 //http://web.mta.info/developers/resources/line_colors.htm
 const colorMap = {
   A: "#0039A6",
@@ -22,10 +161,13 @@ lineData.features.map(
   line => (linesMap[line.properties.name] = line.properties.rt_symbol)
 );
 
+
+//mapped color for each line
 const colorStops = Object.keys(linesMap).map(key => [
   key,
   colorMap[linesMap[key]]
 ]);
+
 
 const maxBounds = stops.features.reduce(
   (acc, stop) => {
@@ -39,23 +181,35 @@ const maxBounds = stops.features.reduce(
   [[-74, 40.7328], [-74, 40.7328]]
 );
 
+//TODO replace with my token
 mapboxgl.accessToken =
   "pk.eyJ1IjoiYnJhZGRhaWx5IiwiYSI6ImNqN21iam90ZzJ3MnEzM3F1anNkNWIydjMifQ.Dez6MhslaJs8ROSplWPSpQ";
 
+
+const MAP_MARGIN=0.1
+
+
 if (!mapboxgl.supported()) {
   alert("Your browser does not support Mapbox GL");
-} else {
+} 
+else {
+  /**
+   * map configuration
+   */
   const map = new mapboxgl.Map({
-    container: "map",
+    container: "map", // id of the element to serve as map
     style: "mapbox://styles/mapbox/dark-v9",
-    center: [-74, 40.7328],
-    zoom: 11,
+    center: [ (maxBounds[0][0]+maxBounds[1][0])/2 , (maxBounds[0][1]+maxBounds[1][1])/2 ], // center of map
+    zoom: 11, // 14 for stops display
     maxBounds: [
-      [maxBounds[0][0] - 0.1, maxBounds[0][1] - 0.1],
-      [maxBounds[1][0] + 0.1, maxBounds[1][1] + 0.1]
+      [maxBounds[0][0] - MAP_MARGIN, maxBounds[0][1] - MAP_MARGIN],
+      [maxBounds[1][0] + MAP_MARGIN, maxBounds[1][1] + MAP_MARGIN]
     ]
   });
 
+
+
+  // TODO continue
   map.on("load", function() {
     map.addLayer({
       id: "trips",
