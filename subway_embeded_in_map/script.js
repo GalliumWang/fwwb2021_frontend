@@ -107,8 +107,8 @@ var stops = {
       "type": "Feature",
       "properties": {
         "name": "Astor Pl",
-        "url": "http://web.mta.info/nyct/service/",
         "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
         "objectid": "1",
         "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
       },
@@ -124,8 +124,8 @@ var stops = {
       "type": "Feature",
       "properties": {
         "name": "Canal St",
-        "url": "http://web.mta.info/nyct/service/",
         "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
         "objectid": "2",
         "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
       },
@@ -188,7 +188,6 @@ mapboxgl.accessToken =
 
 const MAP_MARGIN=0.1
 
-
 if (!mapboxgl.supported()) {
   alert("Your browser does not support Mapbox GL");
 } 
@@ -208,8 +207,6 @@ else {
   });
 
 
-
-  // TODO continue
   map.on("load", function() {
     map.addLayer({
       id: "trips",
