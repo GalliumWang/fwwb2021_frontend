@@ -5,6 +5,7 @@
   <title>地铁模拟系统</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css'>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css'>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -37,8 +38,43 @@
   </header>
 </div> -->
 
+<div class="absolute fl my24 mx24 py24 px24 bg-gray-faint round">
+  <form id="params">
+    <h4 class="txt-m txt-bold mb6">选择要显示的地铁路线</h4>
+    <div class="mb12 mr12 toggle-group align-center">
+      <label class="toggle-container">
+        <input name="route" type="radio" value="-1" checked />
+        <div class="toggle toggle--active-null toggle--null">全部</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route" type="radio" value="1" />
+        <div class="toggle toggle--active-null toggle--null">路线一</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route" type="radio" value="0" />
+        <div class="toggle toggle--active-null toggle--null">无</div>
+      </label>
+    </div>
+    <h4 class="txt-m txt-bold mb6">选择要显示的行政区域:</h4>
+    <div class="mb12 mr12 toggle-group align-center">
+      <label class="toggle-container">
+        <input name="district" type="radio" value="-1" checked />
+        <div class="toggle toggle--active-null toggle--null">全部</div>
+      </label>
+      <label class="toggle-container">
+        <input name="district" type="radio" value="1" />
+        <div class="toggle toggle--active-null toggle--null">行政区域一</div>
+      </label>
+      <label class="toggle-container">
+        <input name="district" type="radio" value="0" />
+        <div class="toggle toggle--active-null toggle--null">无</div>
+      </label>
+    </div>
+  </form>
+</div>
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/18639/lines.js'></script> -->
 <!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/18639/stops.js'></script> -->
 <script  src="./map_data.js"></script>
