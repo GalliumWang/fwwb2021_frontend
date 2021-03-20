@@ -11,6 +11,16 @@ body {
   outline-color: white;
 }
 
+#control-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  /* outline-style: solid;
+  outline-color: white; */
+}
+
 .header-wrap {
   position: absolute;
   top: 25px;

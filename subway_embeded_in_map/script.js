@@ -515,15 +515,18 @@ mapboxgl.accessToken =
 const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])
 const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])
 
-// if (!mapboxgl.supported()) {
-//   alert("Your browser does not support Mapbox GL");
-// } 
-// else {
+
+var map;
+
+if (!mapboxgl.supported()) {
+  alert("Your browser does not support Mapbox GL");
+} 
+else {
 
   /**
    * map configuration
    */
-  const map = new mapboxgl.Map({
+  map = new mapboxgl.Map({
     preserveDrawingBuffer:true,
 
     container: "map", // id of the element to serve as map
@@ -618,4 +621,4 @@ const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])
   //     }
   //   );
   // }
-// }
+}
