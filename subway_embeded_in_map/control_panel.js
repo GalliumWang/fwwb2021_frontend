@@ -32,7 +32,6 @@ function get_route_data(value){
 function get_district_data(value){
     value=parseInt(value);
     var origin=JSON.parse(JSON.stringify(district_data));
-    console.log(JSON.stringify(origin));
     switch (value) {
         case -1:
             break;
@@ -43,7 +42,6 @@ function get_district_data(value){
             origin.features=[origin.features[value-1],];
             break;
     }
-    console.log(JSON.stringify(origin));
     return origin;
 }
 
