@@ -17,16 +17,15 @@ body {
   top: 0;
   bottom: 0;
   width: 20%;
-  /* outline-style: solid;
-  outline-color: white; */
+  outline-style: solid;
+  outline-color: white;
 }
 
 .header-wrap {
   position: absolute;
   top: 25px;
-  left: 40%;
-  right: 25px;
-  z-index: 1000;
+  left: 25px;
+  z-index: 1100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,7 +40,7 @@ body {
 header {
   border-radius: 20px;
   position: relative;
-  left: -50%;
+  /* left: -50%; */
   background: #b9a9d5;
   padding: 1em 1em .5em;
   font-family: Helvetica;

@@ -43,8 +43,9 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoiYnJhZGRhaWx5IiwiYSI6ImNqN21iam90ZzJ3MnEzM3F1anNkNWIydjMifQ.Dez6MhslaJs8ROSplWPSpQ";
 
 
-const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])
-const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])
+const MAP_SCALE=1.5
+const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])*MAP_SCALE;
+const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])*MAP_SCALE;
 
 
 var map;
