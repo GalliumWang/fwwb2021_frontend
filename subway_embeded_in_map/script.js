@@ -11,9 +11,9 @@ var lineData = {
     {
       "type": "Feature",
       "properties": {
-        "name": "G",
+        "name": "1",
         "url": "http://web.mta.info/nyct/service/",
-        "rt_symbol": "G",
+        "rt_symbol": "1",
         "objectid": "753",
         "id": "2000393",
         "shape_len": "2438.20024902"
@@ -515,16 +515,24 @@ mapboxgl.accessToken =
 const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])
 const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])
 
-if (!mapboxgl.supported()) {
-  alert("Your browser does not support Mapbox GL");
-} 
-else {
+// if (!mapboxgl.supported()) {
+//   alert("Your browser does not support Mapbox GL");
+// } 
+// else {
+
   /**
    * map configuration
    */
   const map = new mapboxgl.Map({
+    preserveDrawingBuffer:true,
+
     container: "map", // id of the element to serve as map
-    style: "mapbox://styles/mapbox/dark-v9",
+    // style: "mapbox://styles/mapbox/satellite-v9",
+    // style: "mapbox://styles/mapbox/dark-v9",
+    // style: "mapbox://styles/mapbox/navigation-preview-day-v4",
+    // style: "mapbox://styles/mapbox/navigation-preview-night-v4",
+    // style: "mapbox://styles/mapbox/navigation-guidance-day-v4",
+    style: "mapbox://styles/mapbox/navigation-guidance-night-v4",
     center: [ (maxBounds[0][0]+maxBounds[1][0])/2 , (maxBounds[0][1]+maxBounds[1][1])/2 ], // center of map
     zoom: 11, // 14 for stops display
     maxBounds: [
@@ -610,4 +618,4 @@ else {
   //     }
   //   );
   // }
-}
+// }
