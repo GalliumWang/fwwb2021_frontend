@@ -512,7 +512,8 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoiYnJhZGRhaWx5IiwiYSI6ImNqN21iam90ZzJ3MnEzM3F1anNkNWIydjMifQ.Dez6MhslaJs8ROSplWPSpQ";
 
 
-const MAP_MARGIN=0.16
+const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])
+const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])
 
 if (!mapboxgl.supported()) {
   alert("Your browser does not support Mapbox GL");
@@ -527,8 +528,8 @@ else {
     center: [ (maxBounds[0][0]+maxBounds[1][0])/2 , (maxBounds[0][1]+maxBounds[1][1])/2 ], // center of map
     zoom: 11, // 14 for stops display
     maxBounds: [
-      [maxBounds[0][0] - MAP_MARGIN, maxBounds[0][1] - MAP_MARGIN],
-      [maxBounds[1][0] + MAP_MARGIN, maxBounds[1][1] + MAP_MARGIN]
+      [maxBounds[0][0] - MAP_MARGIN_HON, maxBounds[0][1] - MAP_MARGIN_HON],
+      [maxBounds[1][0] + MAP_MARGIN_VER, maxBounds[1][1] + MAP_MARGIN_VER]
     ]
   });
 
