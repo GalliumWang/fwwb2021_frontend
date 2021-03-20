@@ -143,6 +143,25 @@ else {
         "text-offset": [-1.5, 0]
       }
     });
+
+    map.addLayer(
+      {
+        'id': 'districtLayer',
+        'type': 'fill',
+        'source': {
+          type: "geojson",
+          data: district_data
+        },
+        'layout': {},
+        'paint': {
+          'fill-color': '#5a3fc0',
+          'fill-opacity': 0.3
+        }
+      },
+      'poi-label'
+    );
+
+
   });
 
   // if ("geolocation" in navigator) {
