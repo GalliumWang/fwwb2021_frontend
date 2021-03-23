@@ -66,7 +66,7 @@
       <h4 class="txt-m txt-bold mb6" style="text-align: center;">生成截图</h4>
       <div class="toggle-group align-center">
         <label class="toggle-container">
-          <input name="button1" type="radio" checked onclick="capture_screen()"/>
+          <input name="button1" type="radio" checked id="capture-screen"/>
           <div class="toggle toggle--active-null toggle--null">生成</div>
         </label>
       </div>
@@ -129,10 +129,37 @@
           <input type="submit" value="Subscribe">
         </form> -->
       </div>
-      
     </div>
   </div>
 </div>
+
+
+<div class="pop-up" id="screen_capture">
+  <div class="content">
+    <div class="container">
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      
+      <span class="close">close</span>
+      
+      <div class="title" style="z-index: 125;">
+        <h1>预览截图</h1>
+      </div>
+      
+      <img style="margin: 2em auto;" id="capture_preview" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/cXsiNryL.png" alt="">
+      
+      <div class="subscribe" style="z-index: 125;">
+        
+        <div class="subscribe" style="z-index: 125;">
+          <button>下载</button>
+        </div>
+    </div>
+  </div>
+</div>
+
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>

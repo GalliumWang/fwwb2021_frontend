@@ -1,6 +1,3 @@
-
-
-
 $('#lookup-station').click(function(){
     $('#station-lookup-panel').addClass('open');
   });
@@ -10,3 +7,11 @@ $('#station-lookup-panel .close').click(function(){
 });
 
 
+$('#capture-screen').click(function(){
+  $('#screen_capture').addClass('open');
+  $('#capture_preview').attr("src",map.getCanvas().toDataURL());
+});
+
+$('#screen_capture .close').click(function(){
+$('#screen_capture').removeClass('open');
+});
