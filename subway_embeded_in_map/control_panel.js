@@ -8,10 +8,6 @@ function downloadURI(uri, name) {
     delete link;
   }
   
-function capture_screen(){ 
-downloadURI(map.getCanvas().toDataURL(),'screen_capture.png'); 
-}
-
 function get_route_data(value){
     value=parseInt(value);
     var origin=JSON.parse(JSON.stringify(lineData));
