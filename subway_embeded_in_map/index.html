@@ -31,6 +31,16 @@
           <div class="toggle toggle--active-null toggle--null">无</div>
         </label>
       </div>
+      <div class="mb12 mr12 toggle-group align-center">
+        <label class="toggle-container">
+          <input name="route" type="radio" value="0"/>
+          <div class="toggle toggle--active-null toggle--null">placeholder</div>
+        </label>
+        <label class="toggle-container">
+          <input name="route" type="radio" value="0" />
+          <div class="toggle toggle--active-null toggle--null">placeholder</div>
+        </label>
+      </div>
       <h4 class="txt-m txt-bold mb6">选择要显示的行政区域:</h4>
       <div class="mb12 mr12 toggle-group align-center">
         <label class="toggle-container">
@@ -64,8 +74,8 @@
       <h4 class="txt-m txt-bold mb6">控制面板</h4>
       <div class="toggle-group align-center">
         <label class="toggle-container">
-          <input name="button2" type="radio" checked/>
-          <div class="toggle toggle--active-null toggle--null">启动</div>
+          <input name="button2" type="radio" checked id="lookup-station"/>
+          <div class="toggle toggle--active-null toggle--null">查看车站</div>
         </label>
 
       </div>
@@ -94,6 +104,35 @@
   </header>
 </div>
 
+<div class="pop-up" id="station-lookup-panel">
+  <div class="content">
+    <div class="container">
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      
+      <span class="close">close</span>
+      
+      <div class="title" style="z-index: 125;">
+        <h1>功能暂不可用</h1>
+      </div>
+      
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/cXsiNryL.png" alt="Car">
+      
+      <div class="subscribe" style="z-index: 125;">
+        <h1>如需按课程、班级检索,请使用<span>全文本查询</span>.</h1>
+      
+        <!-- <form>
+          <input type="email" placeholder="Your email address">
+          <input type="submit" value="Subscribe">
+        </form> -->
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
@@ -101,8 +140,13 @@
 <!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/18639/stops.js'></script> -->
 <script  src="./map_data.js"></script>
 <script  src="./script.js"></script>
+
 <!-- control-panel -->
 <link rel="stylesheet" href="./control_panel.css">
 <script  src="./control_panel.js"></script>
+
+
+<link rel="stylesheet" href="./popup.css">
+<script  src="./popup.js"></script>
 </body>
 </html>

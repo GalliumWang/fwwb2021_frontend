@@ -180,3 +180,9 @@ map.loadImage('./static/image/EXPERIENCE_JAPAN_PICTOGRAM/png/T_CHIKATETSU.png', 
    if (error) throw error;
    map.addImage('subway_icon', image);
 });
+
+function fly_to(neLon, neLat){
+  map.flyTo({
+    center: [neLon,neLat],essential: true
+    });
+}
