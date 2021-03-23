@@ -17,6 +17,5 @@ $('#screen_capture').removeClass('open');
 });
 
 $('#download-capture').click(function(){
-  alert(11);
   downloadURI($('#capture_preview').attr("src"),'screen_capture.jpg');
 });
