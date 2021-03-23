@@ -6,7 +6,7 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80%;
+  width: 100%;
   outline-style: solid;
   outline-color: white;
 }
@@ -68,81 +68,3 @@ header h1 {
     font-size: 85%;
   }
 }
-
-div.lines {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
-  margin-top: .8em;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-span {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  font-size: 85%;
-  padding: .4em;
-  color: white;
-}
-
-span:last-child {
-  margin-right: 0;
-}
-
-span.A {
-  background: #0039A6;
-}
-
-span.B {
-  background: #FF6319;
-}
-
-span.G {
-  background: #6CBE45;
-}
-
-span.J {
-  background: #996633;
-}
-
-span.L {
-  background: #A7A9AC;
-}
-
-span.N {
-  background: #FCCC0A;
-}
-
-span.S {
-  background: #808183;
-}
-
-span.one {
-  background: #EE352E;
-}
-
-span.four {
-  background: #00933C;
-}
-
-span.seven {
-  background: #B933AD;
-}
-/*# sourceMappingURL=style.css.map */

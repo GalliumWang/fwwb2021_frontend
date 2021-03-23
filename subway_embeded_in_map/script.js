@@ -1,3 +1,523 @@
+// lineData & stops come from geojson files
+// downloaded from NYC's Open Data project.
+
+
+// line data
+var lineData = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "1",
+        "url": "http://web.mta.info/nyct/service/",
+        "rt_symbol": "1",
+        "objectid": "753",
+        "id": "2000393",
+        "shape_len": "2438.20024902"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.196821,
+            30.177019
+          ],
+          [
+            120.182488,
+            30.177183
+          ],
+          [
+            120.174551,
+            30.177559,
+          ],
+          [
+            120.149576,
+            30.181256
+          ],
+          [
+            120.136105,
+            30.186648
+          ],
+          [
+            120.112519,
+            30.186768
+          ],
+          [
+            120.092044,
+            30.175170
+          ],
+          [
+            120.076355,
+            30.184764
+          ],
+          [
+            120.070768,
+            30.222264
+          ],
+          [
+            120.074389,
+            30.234369
+          ],
+          [
+            120.079048,
+            30.253903
+          ],
+          [
+            120.072639,
+            30.270630
+          ],
+          [
+            120.069270,
+            30.286740
+          ],
+          [
+            120.091450,
+            30.299341
+          ],
+          [
+            120.106281,
+            30.313506
+          ],
+          [
+            120.118878,
+            30.339645
+          ],
+          [
+            120.161193,
+            30.340026
+          ],
+          [
+            120.179858,
+            30.289839
+          ],
+          [
+            120.188515,
+            30.245833
+          ],
+          [
+            120.194695,
+            30.228200
+          ],
+          // below not mated with some stop
+          [
+            120.207821,
+            30.200019
+          ],
+          [
+            120.196821,
+            30.177019
+          ]
+        ]
+      }
+    }
+  ]
+};
+
+
+//stop data
+var stops = {
+  "type": "FeatureCollection",
+  "features": [    
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Astor Pl",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "1",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.196821,
+          30.177019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.182488,
+          30.177183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.174551,
+          30.177559
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.149576,
+          30.181256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.136105,
+          30.186648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.112519,
+          30.186768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.092044,
+          30.175170
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+            120.076355,
+            30.184764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.070768,
+          30.222264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.074389,
+          30.234369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+            120.079048,
+            30.253903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.072639,
+          30.270630
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.069270,
+          30.286740
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.091450,
+          30.299341
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.106281,
+          30.313506
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.118878,
+          30.339645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.161193,
+          30.340026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.179858,
+          30.289839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.188515,
+          30.245833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canal St",
+        "line": "4-6-6 Express",
+        "url": "http://web.mta.info/nyct/service/",
+        "objectid": "2",
+        "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates":[
+          120.194695,
+          30.228200
+        ]
+      }
+    }
+  ]
+};
+
+
+
+district_data={
+  "features": [
+    {
+      "properties": {
+        "fill": "#bf4040",
+        "fillOpacity": 0.33,
+        "fill-opacity": 0.33,
+        "fillColor": "#bf4040",
+        "color": "#bf4040",
+        "contour": 10,
+        "opacity": 0.33,
+        "metric": "time"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+              [
+              120.186821,
+              30.177019
+              ],
+              [
+              120.077044,
+              30.165170
+              ],
+              [
+              120.029270,
+              30.276740
+              ],
+              [
+              120.108878,
+              30.329645
+              ],
+              [
+              120.151193,
+              30.330026
+              ],
+              [
+              120.186821,
+              30.167019
+              ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}
+
+
+
+
+
 //http://web.mta.info/developers/resources/line_colors.htm
 const colorMap = {
   A: "#0039A6",
@@ -43,7 +563,7 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoiYnJhZGRhaWx5IiwiYSI6ImNqN21iam90ZzJ3MnEzM3F1anNkNWIydjMifQ.Dez6MhslaJs8ROSplWPSpQ";
 
 
-const MAP_SCALE=1.5
+const MAP_SCALE=4
 const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])*MAP_SCALE;
 const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])*MAP_SCALE;
 
@@ -179,4 +699,67 @@ else {
 map.loadImage('./static/image/EXPERIENCE_JAPAN_PICTOGRAM/png/T_CHIKATETSU.png', function(error, image) {
    if (error) throw error;
    map.addImage('subway_icon', image);
+});
+
+
+
+
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  delete link;
+}
+
+function capture_screen(){ 
+downloadURI(map.getCanvas().toDataURL(),'screen_capture.png'); 
+}
+
+function get_route_data(value){
+  value=parseInt(value);
+  var origin=JSON.parse(JSON.stringify(lineData));
+  switch (value) {
+      case -1:
+          break;
+      case 0:
+          origin.features=[];
+          break;
+      default:
+          origin.features=[origin.features[value-1],];
+          break;
+  }
+  console.log(JSON.stringify(origin));
+  return origin;
+}
+
+function get_district_data(value){
+  value=parseInt(value);
+  var origin=JSON.parse(JSON.stringify(district_data));
+  switch (value) {
+      case -1:
+          break;
+      case 0:
+          origin.features=[];
+          break;
+      default:
+          origin.features=[origin.features[value-1],];
+          break;
+  }
+  return origin;
+}
+
+params.addEventListener('change', function (e) {
+  if (e.target.name === 'route') {
+      var value = e.target.value;
+      var data=get_route_data(value);
+      map.getSource('trips').setData(data);
+  } 
+  else if (e.target.name === 'district') {
+      var value = e.target.value;
+      var data=get_district_data(value);
+      map.getSource('districtLayer').setData(data);
+  }
 });
