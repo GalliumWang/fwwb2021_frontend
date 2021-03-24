@@ -13,7 +13,13 @@
 </head>
 <body>
 
-<div id="map"></div>
+<div id="map" ></div>
+<div class="calculation-box" style="display: none;">
+  <p>Draw a polygon using the draw tools.</p>
+  <div id="calculated-area"></div>
+</div>
+
+
 
 <div id="control-panel">
 <!-- <div class="absolute fl my24 mx24 py24 px24 bg-gray-faint round"> -->
@@ -213,5 +219,13 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.css" type="text/css">
+<script  src="./calculation_box.js"></script>
+<link rel="stylesheet" href="./calculation_box.css">
+
 </body>
 </html>
