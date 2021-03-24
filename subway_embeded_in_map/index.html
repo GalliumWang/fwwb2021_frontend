@@ -22,47 +22,85 @@
 
 
 <div id="control-panel">
-
+  <form id="params">
   <div id="params-area" class="fl my24 mx24 py24 px24 bg-gray-faint round">
-    <form id="params">
-      <h4 class="txt-m txt-bold mb6">选择要显示的地铁路线</h4>
-      <div class="mb12 mr12 toggle-group align-center">
-        <label class="toggle-container">
-          <input name="route" type="radio" value="-1" checked />
-          <div class="toggle toggle--active-null toggle--null">全部</div>
-        </label>
-        <label class="toggle-container">
-          <input name="route" type="radio" value="1" />
-          <div class="toggle toggle--active-null toggle--null">路线一</div>
-        </label>
-        <label class="toggle-container">
-          <input name="route" type="radio" value="0" />
-          <div class="toggle toggle--active-null toggle--null">无</div>
-        </label>
-      </div>
-      <div class="mb12 mr12 toggle-group align-center">
-        <label class="toggle-container">
-          <input name="route" type="radio" value="0"/>
-          <div class="toggle toggle--active-null toggle--null">placeholder</div>
-        </label>
-        <label class="toggle-container">
-          <input name="route" type="radio" value="0" />
-          <div class="toggle toggle--active-null toggle--null">placeholder</div>
-        </label>
-      </div>
+    <h4 class="txt-m txt-bold mb6">选择要显示的地铁路线</h4>
+    <div class="mb12 mr12 toggle-group align-center">
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="1" id="route-display1" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路1</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="2" id="route-display2" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路2</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="3" id="route-display3" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路3</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="4" id="route-display4" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路4</div>
+      </label>
+    </div>
+    <div class="mb12 mr12 toggle-group align-center">
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="5" id="route-display5" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路5</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="10" id="route-display10" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路10</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="11" id="route-display11" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路11</div>
+      </label>
+      <label class="toggle-container">
+        <input name="route-display" type="checkbox" value="12" id="route-display12" checked/>
+        <div class="toggle toggle--active-null toggle--null">线路12</div>
+      </label>
+    </div>
+
       <h4 class="txt-m txt-bold mb6">选择要显示的行政区域:</h4>
       <div class="mb12 mr12 toggle-group align-center">
         <label class="toggle-container">
-          <input name="district" type="radio" value="-1" checked />
-          <div class="toggle toggle--active-null toggle--null">全部</div>
+          <input name="district" type="checkbox" value="1" id="district-display1" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域1</div>
         </label>
         <label class="toggle-container">
-          <input name="district" type="radio" value="1" />
-          <div class="toggle toggle--active-null toggle--null">区域一</div>
+          <input name="district" type="checkbox" value="2" id="district-display2" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域2</div>
         </label>
         <label class="toggle-container">
-          <input name="district" type="radio" value="0" />
-          <div class="toggle toggle--active-null toggle--null">无</div>
+          <input name="district" type="checkbox" value="3" id="district-display3" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域3</div>
+        </label>
+        <label class="toggle-container">
+          <input name="district" type="checkbox" value="4" id="district-display4" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域4</div>
+        </label>
+        <label class="toggle-container">
+          <input name="district" type="checkbox" value="5" id="district-display5" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域5</div>
+        </label>
+      </div>
+      <div class="mb12 mr12 toggle-group align-center">
+        <label class="toggle-container">
+          <input name="district" type="checkbox" value="6" id="district-display6" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域6</div>
+        </label>
+        <label class="toggle-container">
+          <input name="district" type="checkbox" value="7" id="district-display7" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域7</div>
+        </label>
+        <label class="toggle-container">
+          <input name="district" type="checkbox" value="8" id="district-display8" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域8</div>
+        </label>
+        <label class="toggle-container">
+          <input name="district" type="checkbox" value="10" id="district-display10" checked/>
+          <div class="toggle toggle--active-null toggle--null">区域10</div>
         </label>
       </div>
     </form>

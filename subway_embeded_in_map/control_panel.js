@@ -41,15 +41,39 @@ function get_district_data(value){
     return origin;
 }
 
+function set_route_display(element_id){
+    var show_or_not=$(`#${element_id}`).prop("checked");
+    var route_index = $(`#${element_id}`).prop("value");
+
+    if(show_or_not){
+        map.setLayoutProperty(`trips${route_index}`, 'visibility', 'visible');
+        map.setLayoutProperty(`stations${route_index}`, 'visibility', 'visible');
+        map.setLayoutProperty(`stations-label${route_index}`, 'visibility', 'visible');
+    }
+    else{
+        map.setLayoutProperty(`trips${route_index}`, 'visibility', 'none');
+        map.setLayoutProperty(`stations${route_index}`, 'visibility', 'none');
+        map.setLayoutProperty(`stations-label${route_index}`, 'visibility', 'none');
+    }
+}
+
+function set_district_display(element_id){
+    var show_or_not=$(`#${element_id}`).prop("checked");
+    var district_index = $(`#${element_id}`).prop("value");
+
+    if(show_or_not){
+        map.setLayoutProperty(`districtLayer${district_index}`, 'visibility', 'visible');
+    }
+    else{
+        map.setLayoutProperty(`districtLayer${district_index}`, 'visibility', 'none');
+    }
+}
+
 params.addEventListener('change', function (e) {
-    if (e.target.name === 'route') {
-        var value = e.target.value;
-        var data=get_route_data(value);
-        map.getSource('trips').setData(data);
+    if (e.target.name === "route-display") {
+        set_route_display(e.target.id);
     } 
     else if (e.target.name === 'district') {
-        var value = e.target.value;
-        var data=get_district_data(value);
-        map.getSource('districtLayer').setData(data);
+        set_district_display(e.target.id);
     }
 });

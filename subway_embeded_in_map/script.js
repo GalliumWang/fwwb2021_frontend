@@ -79,7 +79,7 @@ else {
 
   map.on("load", function() {
     map.addLayer({
-      id: "trips",
+      id: "trips1",
       type: "line",
       source: {
         type: "geojson",
@@ -103,7 +103,7 @@ else {
     });
 
     map.addLayer({
-      id: "stations",
+      id: "stations1",
       source: {
         type: "geojson",
         data: stops
@@ -124,7 +124,7 @@ else {
     });
 
     map.addLayer({
-      id: "stations-label",
+      id: "stations-label1",
       source: "stations",
       type: "symbol",
       paint: {
@@ -147,7 +147,7 @@ else {
 
     map.addLayer(
       {
-        'id': 'districtLayer',
+        'id': 'districtLayer1',
         'type': 'fill',
         'source': {
           type: "geojson",
@@ -193,8 +193,6 @@ else {
   //   );
   // }
 }
-
-
 
 
 
