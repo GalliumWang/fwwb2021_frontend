@@ -175,6 +175,9 @@ else {
 }
 
 
+map.addControl(new mapboxgl.NavigationControl());
+
+
 // add subway icon for use
 map.loadImage('./static/image/EXPERIENCE_JAPAN_PICTOGRAM/png/T_CHIKATETSU.png', function(error, image) {
    if (error) throw error;

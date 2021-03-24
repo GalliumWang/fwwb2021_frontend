@@ -22,7 +22,27 @@
 
 
 <div id="control-panel">
-<!-- <div class="absolute fl my24 mx24 py24 px24 bg-gray-faint round"> -->
+
+  <div id="button-area" class="fl my24 mx24 py24 px24 bg-gray-faint round">
+    <form id="button-form">
+      <h4 class="txt-m txt-bold mb6" style="text-align: center;">生成截图</h4>
+      <div class="toggle-group align-center">
+        <label class="toggle-container">
+          <input name="button1" type="radio" checked id="capture-screen"/>
+          <div class="toggle toggle--active-null toggle--null">生成</div>
+        </label>
+      </div>
+
+      <h4 class="txt-m txt-bold mb6">控制面板</h4>
+      <div class="toggle-group align-center">
+        <label class="toggle-container">
+          <input name="button2" type="radio" checked id="lookup-station"/>
+          <div class="toggle toggle--active-null toggle--null">查看车站</div>
+        </label>
+      </div>
+    </form>
+  </div>
+
   <div id="params-area" class="fl my24 mx24 py24 px24 bg-gray-faint round">
     <form id="params">
       <h4 class="txt-m txt-bold mb6">选择要显示的地铁路线</h4>
