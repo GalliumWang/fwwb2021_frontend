@@ -41,7 +41,7 @@ header {
   border-radius: 20px;
   position: relative;
   /* left: -50%; */
-  background: #b9a9d5;
+  background: #ffffff;
   padding: 1em 1em .5em;
   font-family: Helvetica;
   font-size: 90%;
@@ -55,7 +55,7 @@ header h1 {
   font-size: 150%;
   margin-bottom: .4em;
   font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 @media only screen and (max-width: 480px) {
