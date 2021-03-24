@@ -513,3 +513,8 @@ district_data={
     ],
     "type": "FeatureCollection"
   }
+
+
+  route_station_info={
+    route
+  }
