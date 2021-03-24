@@ -181,34 +181,6 @@ else {
       if (error) throw error;
       map.addImage('sticker2', image);
     });
-
-
-    //FIXME
-    map.addSource('stickerP1', {
-      'type': 'geojson',
-      'data': {
-        'type': 'FeatureCollection',
-        'features': [
-          {
-            'type': 'Feature',
-            'geometry': {
-              'type': 'Point',
-              'coordinates': [120.194695,30.228200]
-            }
-          }
-        ]
-      }
-    });
-  
-    map.addLayer({
-      'id': 'stickerL1',
-      'type': 'symbol',
-      'source': 'stickerP1',
-      'layout': {
-        'icon-image': 'sticker1',
-        'icon-size': 0.1
-      }
-    });
     
 
   });
