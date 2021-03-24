@@ -36,7 +36,7 @@
     overflow: hidden;
     text-align: center;
     position: relative;
-    min-height: 100vh;
+    min-height: 684px !important;
   }
   @media (min-width: 768px) {
     .pop-up .content {
@@ -44,7 +44,7 @@
     }
   }
   .pop-up .content .container {
-    padding: 100px 20px 140px;
+    padding: 100px 20px 200px;
   }
   @media (min-width: 568px) {
     .pop-up .content .container {
@@ -243,4 +243,18 @@
     -ms-transform: translateX(0px);
     -o-transform: translateX(0px);
     transform: translateX(0px);
+  }
+
+
+  #station-lookup-line-choose-panel{
+
+  }
+
+  .station-lookup-form{
+    margin-top: 2em;
+  }
+
+  .mapbox-form-title{
+    padding-top: 1em;
+    padding-bottom: 1em;
   }

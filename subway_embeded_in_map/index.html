@@ -128,9 +128,9 @@
         <h1>功能暂不可用</h1>
       </div>
 
-      <div id="params-area" class="fl my24 mx24 py24 px24 bg-gray-faint round">
-        <form id="station-lookup-line-choose-panel">
-          <h4 class="txt-m txt-bold mb6">选择要显示的地铁路线</h4>
+      <div id="params-area" class="bg-gray-faint round">
+        <form id="station-lookup-line-choose-panel" class="station-lookup-form">
+          <h4 class="txt-m txt-bold mb6 mapbox-form-title">选择查看的站点</h4>
           <div class="mb12 mr12 toggle-group align-center">
             <label class="toggle-container">
               <input name="line-for-station" type="radio" value="1" />
@@ -166,6 +166,9 @@
             </label>
           </div>
 
+        </form>
+        <form id="station-select-panel" class="station-lookup-form">
+          <h4 class="txt-m txt-bold mb6 mapbox-form-title">请先选择路线</h4>
         </form>
       </div>
       
