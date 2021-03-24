@@ -71,8 +71,8 @@ function show_station_for_specific_route(route_number){
     route_number=parseInt(route_number);
     var station_numer=this.value;
 
-    station_select_panel=document.getElementById("station-select-panel");
-    station_select_panel.innerHTML=`<h4 class="txt-m txt-bold mb6 mapbox-form-title">选择查看的站点</h4>`;
+    // station_select_panel=document.getElementById("station-select-panel");
+    // station_select_panel.innerHTML=`<h4 class="txt-m txt-bold mb6 mapbox-form-title">选择查看的站点</h4>`;
   
 
     $('#station-lookup-panel').removeClass('open');
@@ -88,5 +88,4 @@ function show_station_for_specific_route(route_number){
       neLat=route_total_info[route_number]["station_location"][station_numer-1][1];
       map.setZoom(14);
       fly_to(neLon,neLat);
-
  }
