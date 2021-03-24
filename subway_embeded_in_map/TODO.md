@@ -1,3 +1,4 @@
 - ## remove mapbox logo
 - ## remove blank space between map and control panel
 - ## use drawn polygon to do something
+- ## advance polygon drawing function

@@ -86,5 +86,7 @@ function show_station_for_specific_route(route_number){
  function fly_to_station(route_number,station_numer){
       neLon=route_total_info[route_number]["station_location"][station_numer-1][0];
       neLat=route_total_info[route_number]["station_location"][station_numer-1][1];
+      map.setZoom(14);
       fly_to(neLon,neLat);
+
  }
