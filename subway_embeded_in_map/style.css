@@ -2,6 +2,15 @@ body {
   background: #353434;
 }
 
+canvas{
+  width: 80vw !important;
+}
+
+.mapboxgl-ctrl-bottom-left{
+  display: none;
+}
+
+
 #map {
   position: absolute;
   top: 0;

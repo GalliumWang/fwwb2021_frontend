@@ -189,3 +189,8 @@ function fly_to(neLon, neLat){
     center: [neLon,neLat],essential: true
     });
 }
+
+setTimeout(function(){
+  var elem = document.getElementsByClassName("mapboxgl-ctrl-bottom-right")[0];
+  elem.remove();
+},3000)
