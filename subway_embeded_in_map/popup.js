@@ -66,7 +66,7 @@ function show_station_for_specific_route(route_number){
 
   }
 
-  $('.station-label').click(function(){
+$('.station-label').click(function(){
     var route_number=document.getElementById('station-lookup-line-choose-title').getAttribute("value");
     route_number=parseInt(route_number);
     var station_numer=this.value;
@@ -77,15 +77,43 @@ function show_station_for_specific_route(route_number){
 
     $('#station-lookup-panel').removeClass('open');
     fly_to_station(route_number,station_numer);
-
-    });
-
+});
 }
 
 
- function fly_to_station(route_number,station_numer){
+function fly_to_station(route_number,station_numer){
+
       neLon=route_total_info[route_number]["station_location"][station_numer-1][0];
       neLat=route_total_info[route_number]["station_location"][station_numer-1][1];
       map.setZoom(14);
       fly_to(neLon,neLat);
- }
+
+      temp_mark_counter++;
+
+      map.addSource(`temp_source_${temp_mark_counter}`, {
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': [
+            {
+              'type': 'Feature',
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [neLon,neLat]
+              }
+            }
+          ]
+        }
+      });
+    
+      map.addLayer({
+        'id': `temp_mark_${temp_mark_counter}`,
+        'type': 'symbol',
+        'source': `temp_source_${temp_mark_counter}`,
+        'layout': {
+          'icon-image': 'sticker2',
+          'icon-size': 0.1
+        }
+  
+      });
+    }

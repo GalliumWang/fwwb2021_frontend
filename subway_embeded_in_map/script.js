@@ -163,6 +163,54 @@ else {
     );
 
 
+    map.addControl(new mapboxgl.NavigationControl());
+
+
+    // add subway icon for use
+    map.loadImage('./static/image/EXPERIENCE_JAPAN_PICTOGRAM/png/T_CHIKATETSU.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('subway_icon', image);
+    });
+
+    map.loadImage('./static/image/sticker/1.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('sticker1', image);
+    });
+
+    map.loadImage('./static/image/sticker/2.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('sticker2', image);
+    });
+
+
+    //FIXME
+    map.addSource('stickerP1', {
+      'type': 'geojson',
+      'data': {
+        'type': 'FeatureCollection',
+        'features': [
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [120.194695,30.228200]
+            }
+          }
+        ]
+      }
+    });
+  
+    map.addLayer({
+      'id': 'stickerL1',
+      'type': 'symbol',
+      'source': 'stickerP1',
+      'layout': {
+        'icon-image': 'sticker1',
+        'icon-size': 0.1
+      }
+    });
+    
+
   });
 
   // if ("geolocation" in navigator) {
@@ -175,14 +223,8 @@ else {
 }
 
 
-map.addControl(new mapboxgl.NavigationControl());
 
 
-// add subway icon for use
-map.loadImage('./static/image/EXPERIENCE_JAPAN_PICTOGRAM/png/T_CHIKATETSU.png', function(error, image) {
-   if (error) throw error;
-   map.addImage('subway_icon', image);
-});
 
 function fly_to(neLon, neLat){
   map.flyTo({
@@ -194,3 +236,6 @@ setTimeout(function(){
   var elem = document.getElementsByClassName("mapboxgl-ctrl-bottom-right")[0];
   elem.remove();
 },3000)
+
+
+var temp_mark_counter=0;
