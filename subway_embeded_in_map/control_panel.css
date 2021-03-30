@@ -43,3 +43,7 @@
 
 #params{
 }
+
+#params-area{
+    border-radius: 50px !important;
+}
