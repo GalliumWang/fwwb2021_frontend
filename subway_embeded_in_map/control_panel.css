@@ -33,6 +33,13 @@
     width: 100px;
 }
 
+#display-control-popup{
+    background-color: rgba(0,0,0,0);
+}
+
+#display-control-popup .content {
+    min-height: 400px !important;
+  }
+
 #params{
-    display: none;
 }

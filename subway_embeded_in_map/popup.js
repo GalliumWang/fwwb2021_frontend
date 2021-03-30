@@ -6,7 +6,6 @@ $('#station-lookup-panel .close').click(function(){
   $('#station-lookup-panel').removeClass('open');
 });
 
-
 $('#capture-screen').click(function(){
   $('#screen_capture').addClass('open');
   $('#capture_preview').attr("src",map.getCanvas().toDataURL());
@@ -15,6 +14,15 @@ $('#capture-screen').click(function(){
 $('#screen_capture .close').click(function(){
 $('#screen_capture').removeClass('open');
 });
+
+$('#display-control').click(function(){
+  $('#display-control-popup').addClass('open');
+});
+
+$('#display-control-popup .close').click(function(){
+  $('#display-control-popup').removeClass('open');
+  });
+
 
 $('#download-capture').click(function(){
   downloadURI($('#capture_preview').attr("src"),'screen_capture.jpg');
