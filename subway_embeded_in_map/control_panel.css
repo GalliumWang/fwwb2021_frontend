@@ -28,3 +28,11 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.wide-toggle{
+    width: 100px;
+}
+
+#params{
+    display: none;
+}
