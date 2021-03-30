@@ -123,27 +123,28 @@ else {
       }
     });
 
-    map.addLayer({
-      id: "stations-label1",
-      source: "stations",
-      type: "symbol",
-      paint: {
-        "text-color": "white",
-        "text-halo-color": "black",
-        "text-halo-width": 1,
-        "text-halo-blur": 4
-      },
-      layout: {
-        "text-font": ["Open Sans Regular"],
-        "text-field": "{name} ({line})",
-        "text-size": {
-          base: 12,
-          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
-        },
-        "text-anchor": "right",
-        "text-offset": [-1.5, 0]
-      }
-    });
+    // TODO:add labels
+    // map.addLayer({
+    //   id: "stations-label1",
+    //   source: "stations",
+    //   type: "symbol",
+    //   paint: {
+    //     "text-color": "white",
+    //     "text-halo-color": "black",
+    //     "text-halo-width": 1,
+    //     "text-halo-blur": 4
+    //   },
+    //   layout: {
+    //     "text-font": ["Open Sans Regular"],
+    //     "text-field": "{name} ({line})",
+    //     "text-size": {
+    //       base: 12,
+    //       stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+    //     },
+    //     "text-anchor": "right",
+    //     "text-offset": [-1.5, 0]
+    //   }
+    // });
 
     map.addLayer(
       {
