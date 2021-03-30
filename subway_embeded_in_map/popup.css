@@ -36,7 +36,7 @@
     overflow: hidden;
     text-align: center;
     position: relative;
-    min-height: 684px !important;
+    min-height: 725px !important;
   }
   @media (min-width: 768px) {
     .pop-up .content {
