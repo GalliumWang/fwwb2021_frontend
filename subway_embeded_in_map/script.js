@@ -65,7 +65,7 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoiYnJhZGRhaWx5IiwiYSI6ImNqN21iam90ZzJ3MnEzM3F1anNkNWIydjMifQ.Dez6MhslaJs8ROSplWPSpQ";
 
 
-const MAP_SCALE=1.5
+const MAP_SCALE=40
 const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])*MAP_SCALE;
 const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])*MAP_SCALE;
 
@@ -632,51 +632,56 @@ else {
      * https://github.com/mapbox/carmen/blob/master/carmen-geojson.md */
 
 
-     var stationNameGeocoder = function (query) {
-      // Match anything which looks like
-      // decimal degrees coordinate pair.
-      var matches = query.match(
-          /^[ ]*(?:Lat: )?(-?\d+\.?\d*)[, ]+(?:Lng: )?(-?\d+\.?\d*)[ ]*$/i
-      );
-      if (!matches) {
-          return null;
+    function findGeoByStationName(stationName){
+      for(key of Object.keys(stationNames)){
+        var index=0;
+        for(name_value of stationNames[key]){
+          if(name_value.toUpperCase()==stationName.toUpperCase()){  //ignore case
+            return [route_total_info[key].station_location[index],[key,index]];
+          }
+          index++;
+        }
       }
+      return null;
+    }
 
+    var stationNameGeocoder = function (query) {
       function coordinateFeature(lng, lat) {
-          return {
-              center: [lng, lat],
-              geometry: {
-                  type: 'Point',
-                  coordinates: [lng, lat]
-              },
-              place_name: 'Lat: ' + lat + ' Lng: ' + lng,
-              place_type: ['coordinate'],
-              properties: {},
-              type: 'Feature'
-          };
+        return {
+            center: [lng, lat],
+            geometry: {
+                type: 'Point',
+                coordinates: [lng, lat]
+            },
+            place_name: query,
+            place_type: ['coordinate'],
+            properties: {},
+            type: 'Feature'
+        };
       }
 
-      var coord1 = Number(matches[1]);
-      var coord2 = Number(matches[2]);
-      var geocodes = [];
+      var matches = query.match(
+          /^[ ]*[Ss][Tt][Aa](\d+)$/i
+      );
 
-      if (coord1 < -90 || coord1 > 90) {
-          // must be lng, lat
-          geocodes.push(coordinateFeature(coord1, coord2));
+      if (matches) {
+        var station_info=findGeoByStationName(query);
+        if(!station_info){
+          return null;
+        }
+
+        var coord1 = station_info[0][0];
+        var coord2 = station_info[0][1];
+        var route_name=station_info[1][0];
+        var station_index=station_info[1][1];
+        
+        var geocodes = [];
+        var tempResultItem=coordinateFeature(coord1, coord2);
+        tempResultItem.place_name=route_name+"号线路第"+station_index+"站点";
+        geocodes.push(tempResultItem);
+        return geocodes;
       }
-
-      if (coord2 < -90 || coord2 > 90) {
-          // must be lat, lng
-          geocodes.push(coordinateFeature(coord2, coord1));
-      }
-
-      if (geocodes.length === 0) {
-          // else could be either lng, lat or lat, lng
-          geocodes.push(coordinateFeature(coord1, coord2));
-          geocodes.push(coordinateFeature(coord2, coord1));
-      }
-
-      return geocodes;
+      return null;
   };
 
   // Add the control to the map.
@@ -684,15 +689,16 @@ else {
       new MapboxGeocoder({
           accessToken: mapboxgl.accessToken,
           localGeocoder: stationNameGeocoder,
-          zoom: 4,
+          zoom: 14,
           placeholder: "请输入站点名称",
-          mapboxgl: mapboxgl
+          mapboxgl: mapboxgl,
+          localGeocoderOnly:true
       })
   );
 
 
     map.addControl(new mapboxgl.NavigationControl());
-    
+
     map.addControl(draw);
 
     map.on('draw.create', updateArea);
