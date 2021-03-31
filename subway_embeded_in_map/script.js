@@ -721,6 +721,52 @@ else {
       map.addImage('sticker2', image);
     });
 
+
+    map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/popup.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('board-image', image,
+      {
+        stretchX: [
+            [25, 55],
+            [85, 115]
+        ],
+        stretchY: [[25, 100]],
+        content: [25, 25, 115, 100],
+        pixelRatio: 2
+    }
+      );
+    });
+
+    map.addSource('board-points', {
+      'type': 'geojson',
+      'data': {
+          'type': 'FeatureCollection',
+          'features': [
+              {
+                  'type': 'Feature',
+                  'geometry': {
+                      'type': 'Point',
+                      'coordinates': [120.09874,30.367595]
+                  }
+              },
+          ]
+      }
+  });
+
+  map.addLayer({
+      'id': 'board-points-layer',
+      'type': 'symbol',
+      'source': 'board-points',
+      'layout': {
+          'text-field': '线路1\n起点',
+          // 'icon-text-fit': "both",
+          'icon-image': 'board-image',
+          'icon-allow-overlap': true,
+          'text-allow-overlap': true
+      }
+  });
+
+
   });
 
   // if ("geolocation" in navigator) {
@@ -732,4 +778,16 @@ else {
   // }
 }
 
+function fly_to(neLon, neLat){
+  map.flyTo({
+    center: [neLon,neLat],essential: true
+    });
+}
+
+setTimeout(function(){
+  var elem = document.getElementsByClassName("mapboxgl-ctrl-bottom-right")[0];
+  elem.remove();
+},3000)
+
+var temp_mark_counter=0;
 
