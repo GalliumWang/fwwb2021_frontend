@@ -7,6 +7,10 @@
   <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css'>
   <link rel='stylesheet' href='https://api.mapbox.com/mapbox-assembly/v0.23.2/assembly.min.css'>
   <link rel="stylesheet" href="./style.css">
+
+  <!-- for geocoder -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
 </head> 
 <body>
 
@@ -273,10 +277,14 @@
   </div>
 </div>
 </div>
-
-
-
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.css" type="text/css">
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
+
+<script  src="./calculation_box.js"></script>
+<link rel="stylesheet" href="./calculation_box.css">
+
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/18639/lines.js'></script> -->
 <!-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/18639/stops.js'></script> -->
@@ -295,11 +303,7 @@
 <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.js"></script>
-<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.1/mapbox-gl-draw.css" type="text/css">
-<script  src="./calculation_box.js"></script>
-<link rel="stylesheet" href="./calculation_box.css">
+
 
 </body>
 </html>
