@@ -43,11 +43,11 @@ function show_station_for_specific_route(route_number){
 
   var NUM_PER_ROW=0;
 
-  if(station_num<=40){
-    NUM_PER_ROW=10;
+  if(station_num<=28){
+    NUM_PER_ROW=7;
   }
   else{
-    NUM_PER_ROW=10;
+    NUM_PER_ROW=11;
   }
 
   row_nums=parseInt(station_num/NUM_PER_ROW);
@@ -60,10 +60,11 @@ function show_station_for_specific_route(route_number){
 
     for(var j=1;j<=NUM_PER_ROW&&i*NUM_PER_ROW+j<=station_num;j++){
       var station_index=i*NUM_PER_ROW+j;
+      var stationName=stationNames[route_number][station_index-1];
       var tempElement = document.createElement('DIV');
       var tempString=`<label class="toggle-container">
       <input name="station-select" type="radio" class="station-label" value="${station_index}" />
-      <div class="toggle toggle--active-null toggle--null">${station_index}</div>
+      <div class="toggle toggle--active-null toggle--null">${stationName}</div>
       </label>
       `;
       tempElement.innerHTML=tempString;
@@ -126,5 +127,5 @@ function fly_to_station(route_number,station_numer){
       });
     }
 
-    document.getElementById('station-lookup-default-route').click();
-    show_station_for_specific_route(1);
+document.getElementById('station-lookup-default-route').click();
+show_station_for_specific_route(1);

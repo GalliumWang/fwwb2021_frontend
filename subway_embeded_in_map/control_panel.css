@@ -10,10 +10,6 @@
 }
 
 
-#params-area{
-    z-index: 1100;
-}
-
 #button-area{
     width: 240px;
     display: flex;
@@ -45,5 +41,20 @@
 }
 
 #params-area{
+    z-index: 1100;
     border-radius: 50px !important;
+}
+
+#params-area-station-lookup{
+    /* combine with css of params-area */
+    border-radius: 50px !important;
+    z-index: 1100;
+
+    width: 820px;
+    position: relative;
+    right: 150px;
+}
+
+#display-control-popup{
+    width: 600px;
 }
