@@ -456,28 +456,181 @@ else {
     });
 
 
-    // TODO:add labels
-    // map.addLayer({
-    //   id: "stations-label1",
-    //   source: "stations",
-    //   type: "symbol",
-    //   paint: {
-    //     "text-color": "white",
-    //     "text-halo-color": "black",
-    //     "text-halo-width": 1,
-    //     "text-halo-blur": 4
-    //   },
-    //   layout: {
-    //     "text-font": ["Open Sans Regular"],
-    //     "text-field": "{name} ({line})",
-    //     "text-size": {
-    //       base: 12,
-    //       stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
-    //     },
-    //     "text-anchor": "right",
-    //     "text-offset": [-1.5, 0]
-    //   }
-    // });
+    map.addLayer({
+      id: "stations-label1",
+      source: "stations1",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label2",
+      source: "stations2",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label3",
+      source: "stations3",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label4",
+      source: "stations4",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+    
+    map.addLayer({
+      id: "stations-label5",
+      source: "stations5",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label10",
+      source: "stations10",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label11",
+      source: "stations11",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label12",
+      source: "stations12",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
 
     map.addLayer(
       {

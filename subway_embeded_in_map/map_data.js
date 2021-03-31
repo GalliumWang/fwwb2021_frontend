@@ -516,24 +516,30 @@ var lineData12=lineDataFactory("12","L",lineGeoData12);
     }
   }
 
-  function stopsFactory(geoData){
+  function stopsFactory(geoData,stationId){
     var stopsObj=JSON.parse(JSON.stringify(stopsTemplate));
+    var stopCount=0;
+
     for(corData of geoData){
       stopObj=JSON.parse(JSON.stringify(stopTemplate));
+      stopObj.properties.line="route"+stationId;
+      stopObj.properties.name=stationNames[stationId][stopCount];   // set station name
       stopObj.geometry.coordinates=corData;
-      stopsObj.features.push(stopObj)
+      stopsObj.features.push(stopObj);
+      stopCount++;
     }
+    
     return stopsObj;
   }
 
-  var stops1=stopsFactory(lineGeoData1);
-  var stops2=stopsFactory(lineGeoData2);
-  var stops3=stopsFactory(lineGeoData3);
-  var stops4=stopsFactory(lineGeoData4);
-  var stops5=stopsFactory(lineGeoData5);
-  var stops10=stopsFactory(lineGeoData10);
-  var stops11=stopsFactory(lineGeoData11);
-  var stops12=stopsFactory(lineGeoData12);
+  var stops1=stopsFactory(lineGeoData1,"1");
+  var stops2=stopsFactory(lineGeoData2,"2");
+  var stops3=stopsFactory(lineGeoData3,"3");
+  var stops4=stopsFactory(lineGeoData4,"4");
+  var stops5=stopsFactory(lineGeoData5,"5");
+  var stops10=stopsFactory(lineGeoData10,"10");
+  var stops11=stopsFactory(lineGeoData11,"11");
+  var stops12=stopsFactory(lineGeoData12,"12");
 
   district_data={
     "features": [
