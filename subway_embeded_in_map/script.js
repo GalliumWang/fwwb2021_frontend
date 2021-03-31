@@ -13,7 +13,7 @@ const colorMap = {
 };
 
 const linesMap = {};
-lineData.features.map(
+lineData1.features.map(
   line => (linesMap[line.properties.name] = line.properties.rt_symbol)
 );
 
@@ -83,7 +83,7 @@ else {
       type: "line",
       source: {
         type: "geojson",
-        data: lineData
+        data: lineData1
       },
       layout: {
         "line-cap": "round",
