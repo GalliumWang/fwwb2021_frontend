@@ -99,6 +99,9 @@ else {
   });
 
   map.on("load", function() {
+
+    var trip_width_setting=6
+
     map.addLayer({
       id: "trips1",
       type: "line",
@@ -116,10 +119,7 @@ else {
           type: "categorical",
           stops: colorStops
         },
-        "line-width": {
-          base: 1,
-          stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-        }
+        "line-width": trip_width_setting
       }
     });
 
@@ -140,10 +140,7 @@ else {
             type: "categorical",
             stops: colorStops
           },
-          "line-width": {
-            base: 1,
-            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-          }
+          "line-width": trip_width_setting
         }
       });
 
@@ -165,10 +162,7 @@ else {
             type: "categorical",
             stops: colorStops
           },
-          "line-width": {
-            base: 1,
-            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-          }
+          "line-width": trip_width_setting
         }
       });
 
@@ -189,10 +183,7 @@ else {
             type: "categorical",
             stops: colorStops
           },
-          "line-width": {
-            base: 1,
-            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-          }
+          "line-width": trip_width_setting
         }
       });
 
@@ -213,10 +204,7 @@ else {
             type: "categorical",
             stops: colorStops
           },
-          "line-width": {
-            base: 1,
-            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-          }
+          "line-width": trip_width_setting
         }
       });
 
@@ -237,10 +225,7 @@ else {
             type: "categorical",
             stops: colorStops
           },
-          "line-width": {
-            base: 1,
-            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-          }
+          "line-width": trip_width_setting
         }
       });
 
@@ -261,10 +246,7 @@ else {
             type: "categorical",
             stops: colorStops
           },
-          "line-width": {
-            base: 1,
-            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-          }
+          "line-width": trip_width_setting
         }
       });
 
@@ -285,10 +267,7 @@ else {
             type: "categorical",
             stops: colorStops
           },
-          "line-width": {
-            base: 1,
-            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
-          }
+          "line-width": trip_width_setting
         }
       });
 
@@ -454,7 +433,6 @@ else {
         }
       }
     });
-
 
     map.addLayer({
       id: "stations-label1",
