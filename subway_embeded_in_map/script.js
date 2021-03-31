@@ -313,6 +313,149 @@ else {
       }
     });
 
+    map.addLayer({
+      id: "stations2",
+      source: {
+        type: "geojson",
+        data: stops2
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+
+    map.addLayer({
+      id: "stations3",
+      source: {
+        type: "geojson",
+        data: stops3
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations4",
+      source: {
+        type: "geojson",
+        data: stops4
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations5",
+      source: {
+        type: "geojson",
+        data: stops5
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations10",
+      source: {
+        type: "geojson",
+        data: stops10
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations11",
+      source: {
+        type: "geojson",
+        data: stops11
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations12",
+      source: {
+        type: "geojson",
+        data: stops12
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+
+
     // TODO:add labels
     // map.addLayer({
     //   id: "stations-label1",
