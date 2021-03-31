@@ -46,9 +46,9 @@ const colorStops = Object.keys(linesMap).map(key => [
 ]);
 
 
-var init_point=stops.features[0].geometry.coordinates;
+var init_point=stops1.features[0].geometry.coordinates;
 
-const maxBounds = stops.features.reduce(
+const maxBounds = stops1.features.reduce(
   (acc, stop) => {
     const [[swLon, swLat], [neLon, neLat]] = acc;
     const [lon, lat] = stop.geometry.coordinates;
@@ -296,7 +296,7 @@ else {
       id: "stations1",
       source: {
         type: "geojson",
-        data: stops
+        data: stops1
       },
       type: "circle",
       paint: {
@@ -397,6 +397,5 @@ setTimeout(function(){
   var elem = document.getElementsByClassName("mapboxgl-ctrl-bottom-right")[0];
   elem.remove();
 },3000)
-
 
 var temp_mark_counter=0;

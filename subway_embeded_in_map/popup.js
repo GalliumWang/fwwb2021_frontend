@@ -125,3 +125,6 @@ function fly_to_station(route_number,station_numer){
   
       });
     }
+
+    document.getElementById('station-lookup-default-route').click();
+    show_station_for_specific_route(1);

@@ -355,6 +355,7 @@ var lineDataTemplate={
   ]
 };
 
+
 function lineDataFactory(name,symbol,geoData){
   var template=JSON.parse(JSON.stringify(lineDataTemplate));
   template.features[0].geometry.coordinates=JSON.parse(JSON.stringify(geoData));
@@ -372,8 +373,40 @@ var lineData10=lineDataFactory("10","G",lineGeoData10);
 var lineData11=lineDataFactory("11","J",lineGeoData11);
 var lineData12=lineDataFactory("12","L",lineGeoData12);
   
+
+  var stopsTemplate={
+    "type": "FeatureCollection",
+    "features": []
+  };
+  var stopTemplate={
+    "type": "Feature",
+    "properties": {
+      "name": "Astor Pl",
+      "line": "4-6-6 Express",
+      "url": "http://web.mta.info/nyct/service/",
+      "objectid": "1",
+      "notes": "4 nights, 6-all times, 6 Express-weekdays AM southbound, PM northbound"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates":[]
+    }
+  }
+
+  function stopsFactory(geoData){
+    var stopsObj=JSON.parse(JSON.stringify(stopsTemplate));
+    for(corData of geoData){
+      stopObj=JSON.parse(JSON.stringify(stopTemplate));
+      stopObj.geometry.coordinates=corData;
+      stopsObj.features.push(stopObj)
+    }
+    return stopsObj;
+  }
+
+  var stops1=stopsFactory(lineGeoData1);
+
   //stop data
-  var stops = {
+  var stopsX = {
     "type": "FeatureCollection",
     "features": [    
       {
@@ -770,12 +803,6 @@ district_data={
     ],
     "type": "FeatureCollection"
   }
-
-
-  // route_station_info={
-  //   route
-  // }
-
 
   //TODO
 
