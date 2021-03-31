@@ -16,6 +16,28 @@ const linesMap = {};
 lineData1.features.map(
   line => (linesMap[line.properties.name] = line.properties.rt_symbol)
 );
+lineData2.features.map(
+  line => (linesMap[line.properties.name] = line.properties.rt_symbol)
+);
+lineData3.features.map(
+  line => (linesMap[line.properties.name] = line.properties.rt_symbol)
+);
+lineData4.features.map(
+  line => (linesMap[line.properties.name] = line.properties.rt_symbol)
+);
+lineData5.features.map(
+  line => (linesMap[line.properties.name] = line.properties.rt_symbol)
+);
+lineData10.features.map(
+  line => (linesMap[line.properties.name] = line.properties.rt_symbol)
+);
+lineData11.features.map(
+  line => (linesMap[line.properties.name] = line.properties.rt_symbol)
+);
+
+lineData12.features.map(
+  line => (linesMap[line.properties.name] = line.properties.rt_symbol)
+);
 
 //mapped color for each line
 const colorStops = Object.keys(linesMap).map(key => [
@@ -76,7 +98,6 @@ else {
     ]
   });
 
-
   map.on("load", function() {
     map.addLayer({
       id: "trips1",
@@ -101,6 +122,175 @@ else {
         }
       }
     });
+
+      map.addLayer({
+        id: "trips2",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData2
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": {
+            base: 1,
+            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
+          }
+        }
+      });
+
+
+      map.addLayer({
+        id: "trips3",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData3
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": {
+            base: 1,
+            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
+          }
+        }
+      });
+
+      map.addLayer({
+        id: "trips4",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData4
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": {
+            base: 1,
+            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
+          }
+        }
+      });
+
+      map.addLayer({
+        id: "trips5",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData5
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": {
+            base: 1,
+            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
+          }
+        }
+      });
+
+      map.addLayer({
+        id: "trips10",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData10
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": {
+            base: 1,
+            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
+          }
+        }
+      });
+
+      map.addLayer({
+        id: "trips11",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData11
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": {
+            base: 1,
+            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
+          }
+        }
+      });
+
+      map.addLayer({
+        id: "trips12",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData12
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": {
+            base: 1,
+            stops: [[9, 1], [11, 1], [13, 5], [15, 10]]
+          }
+        }
+      });
 
     map.addLayer({
       id: "stations1",
