@@ -1,0 +1,8 @@
+#in_station_view_frame{
+    position: absolute;
+    z-index: 110;
+    left: 26%;
+    top: 2%;
+    border-radius: 20px;
+    border: #999 solid 3px;
+}
