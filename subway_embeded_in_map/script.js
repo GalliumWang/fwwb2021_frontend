@@ -799,6 +799,7 @@ else {
   map.addSource('board-points-end', temp_source);
 
 
+
   map.addLayer({
       'id': 'board-points-end-layer',
       'type': 'symbol',

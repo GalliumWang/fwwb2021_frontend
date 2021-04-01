@@ -884,3 +884,5 @@ var lineData12=lineDataFactory("12","L",lineGeoData12);
       ]
     }
   }
+
+  var test_text="dsfasdfas";

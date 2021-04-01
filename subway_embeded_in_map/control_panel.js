@@ -69,6 +69,26 @@ function set_district_display(element_id){
     }
 }
 
+
+function set_board_display(element_id){
+    var show_or_not=$(`#${element_id}`).prop("checked");
+
+    if(element_id=="board-start-diaplay"){
+        var board_category='board-points-layer';    
+    }
+    else{
+        var board_category='board-points-end-layer';
+    }
+
+    if(show_or_not){
+        map.setLayoutProperty(board_category, 'visibility', 'visible');
+    }
+    else{
+        map.setLayoutProperty(board_category, 'visibility', 'none');
+    }
+}
+
+
 params.addEventListener('change', function (e) {
     if (e.target.name === "route-display") {
         set_route_display(e.target.id);
@@ -76,4 +96,8 @@ params.addEventListener('change', function (e) {
     else if (e.target.name === 'district') {
         set_district_display(e.target.id);
     }
+    else if(e.target.name === 'board-diaplay'){
+        set_board_display(e.target.id);
+    }
+
 });
