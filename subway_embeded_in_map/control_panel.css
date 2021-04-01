@@ -58,3 +58,11 @@
 #display-control-popup{
     width: 600px;
 }
+
+
+#style-menu {
+    position: absolute;
+    background: #efefef;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    }
