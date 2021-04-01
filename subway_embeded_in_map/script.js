@@ -625,8 +625,7 @@ else {
           'fill-color': '#5a3fc0',
           'fill-opacity': 0.3
         }
-      },
-      'poi-label'
+      }
     );
 
     /* Given a query in the form "lng, lat" or "lat, lng"
@@ -757,7 +756,7 @@ else {
     },
     'properties': {
       'image-name': 'board-image',
-      'name': 'uuuuwkwk'
+      'name': ""
       }
 }
 
@@ -767,11 +766,9 @@ else {
     var start_point_geo=route_total_info[route_name].station_location[0];
     var temp_single_source=JSON.parse(JSON.stringify(point_feather_template));
     temp_single_source.geometry.coordinates=start_point_geo;
+    temp_single_source.properties.name="线路"+route_name+'\n起点'
     temp_source.data.features.push(temp_single_source);
   }
-
-  console.log(JSON.stringify(temp_source));
-
 
   map.addSource('board-points', temp_source);
 
@@ -780,6 +777,32 @@ else {
       'id': 'board-points-layer',
       'type': 'symbol',
       'source': 'board-points',
+      'layout': {
+          'text-field': ['get', 'name'],
+          'icon-text-fit': "both",
+          'icon-image': ['get', 'image-name'],
+          'icon-allow-overlap': true,
+          'text-allow-overlap': true
+      }
+  });
+
+  temp_source=JSON.parse(JSON.stringify(route_start_board_source));
+
+  for(route_name of Object.keys(route_total_info)){
+    var start_point_geo=route_total_info[route_name].station_location[route_total_info[route_name].station_location.length-1];
+    var temp_single_source=JSON.parse(JSON.stringify(point_feather_template));
+    temp_single_source.geometry.coordinates=start_point_geo;
+    temp_single_source.properties.name="线路"+route_name+'\n终点'
+    temp_source.data.features.push(temp_single_source);
+  }
+
+  map.addSource('board-points-end', temp_source);
+
+
+  map.addLayer({
+      'id': 'board-points-end-layer',
+      'type': 'symbol',
+      'source': 'board-points-end',
       'layout': {
           'text-field': ['get', 'name'],
           'icon-text-fit': "both",
