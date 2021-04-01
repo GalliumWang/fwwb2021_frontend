@@ -70,6 +70,9 @@ const MAP_MARGIN_HON=Math.abs(maxBounds[0][0]-maxBounds[1][0])*MAP_SCALE;
 const MAP_MARGIN_VER=Math.abs(maxBounds[0][1]-maxBounds[1][1])*MAP_SCALE;
 
 
+var board_margin_text_top="__________\n"
+var board_margin_text_bottom="\n—————"
+
 var map;
 
 if (!mapboxgl.supported()) {
@@ -737,30 +740,50 @@ else {
       );
     });
 
-    map.addSource('board-points', {
+  var route_start_board_source={
       'type': 'geojson',
       'data': {
           'type': 'FeatureCollection',
           'features': [
-              {
-                  'type': 'Feature',
-                  'geometry': {
-                      'type': 'Point',
-                      'coordinates': [120.09874,30.367595]
-                  }
-              },
           ]
       }
-  });
+  }
+
+  var point_feather_template={
+    'type': 'Feature',
+    'geometry': {
+        'type': 'Point',
+        'coordinates': []
+    },
+    'properties': {
+      'image-name': 'board-image',
+      'name': 'uuuuwkwk'
+      }
+}
+
+  var temp_source=JSON.parse(JSON.stringify(route_start_board_source));
+
+  for(route_name of Object.keys(route_total_info)){
+    var start_point_geo=route_total_info[route_name].station_location[0];
+    var temp_single_source=JSON.parse(JSON.stringify(point_feather_template));
+    temp_single_source.geometry.coordinates=start_point_geo;
+    temp_source.data.features.push(temp_single_source);
+  }
+
+  console.log(JSON.stringify(temp_source));
+
+
+  map.addSource('board-points', temp_source);
+
 
   map.addLayer({
       'id': 'board-points-layer',
       'type': 'symbol',
       'source': 'board-points',
       'layout': {
-          'text-field': '线路1\n起点',
-          // 'icon-text-fit': "both",
-          'icon-image': 'board-image',
+          'text-field': ['get', 'name'],
+          'icon-text-fit': "both",
+          'icon-image': ['get', 'image-name'],
           'icon-allow-overlap': true,
           'text-allow-overlap': true
       }
