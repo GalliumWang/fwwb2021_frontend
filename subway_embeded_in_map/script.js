@@ -840,10 +840,741 @@ var temp_mark_counter=0;
 
 var layerList = document.getElementById('style-menu');
 var inputs = layerList.getElementsByTagName('input');
+
+function reset_layer(){
+    var trip_width_setting=6
+
+    map.addLayer({
+      id: "trips1",
+      type: "line",
+      source: {
+        type: "geojson",
+        data: lineData1
+      },
+      layout: {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      paint: {
+        "line-color": {
+          property: "name",
+          type: "categorical",
+          stops: colorStops
+        },
+        "line-width": trip_width_setting
+      }
+    });
+
+      map.addLayer({
+        id: "trips2",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData2
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": trip_width_setting
+        }
+      });
+
+
+      map.addLayer({
+        id: "trips3",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData3
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": trip_width_setting
+        }
+      });
+
+      map.addLayer({
+        id: "trips4",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData4
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": trip_width_setting
+        }
+      });
+
+      map.addLayer({
+        id: "trips5",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData5
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": trip_width_setting
+        }
+      });
+
+      map.addLayer({
+        id: "trips10",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData10
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": trip_width_setting
+        }
+      });
+
+      map.addLayer({
+        id: "trips11",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData11
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": trip_width_setting
+        }
+      });
+
+      map.addLayer({
+        id: "trips12",
+        type: "line",
+        source: {
+          type: "geojson",
+          data: lineData12
+        },
+        layout: {
+          "line-cap": "round",
+          "line-join": "round"
+        },
+        paint: {
+          "line-color": {
+            property: "name",
+            type: "categorical",
+            stops: colorStops
+          },
+          "line-width": trip_width_setting
+        }
+      });
+
+    map.addLayer({
+      id: "stations1",
+      source: {
+        type: "geojson",
+        data: stops1
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+
+    map.addLayer({
+      id: "stations2",
+      source: {
+        type: "geojson",
+        data: stops2
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+
+    map.addLayer({
+      id: "stations3",
+      source: {
+        type: "geojson",
+        data: stops3
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations4",
+      source: {
+        type: "geojson",
+        data: stops4
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations5",
+      source: {
+        type: "geojson",
+        data: stops5
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations10",
+      source: {
+        type: "geojson",
+        data: stops10
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations11",
+      source: {
+        type: "geojson",
+        data: stops11
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+    map.addLayer({
+      id: "stations12",
+      source: {
+        type: "geojson",
+        data: stops12
+      },
+      type: "circle",
+      paint: {
+        "circle-radius": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 5], [15, 10]]
+        },
+        "circle-color": "white",
+        "circle-stroke-color": "black",
+        "circle-stroke-width": {
+          base: 1,
+          stops: [[9, 0], [12, 0], [13, 1], [15, 2]]
+        }
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label1",
+      source: "stations1",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label2",
+      source: "stations2",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label3",
+      source: "stations3",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label4",
+      source: "stations4",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+    
+    map.addLayer({
+      id: "stations-label5",
+      source: "stations5",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label10",
+      source: "stations10",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label11",
+      source: "stations11",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer({
+      id: "stations-label12",
+      source: "stations12",
+      type: "symbol",
+      paint: {
+        "text-color": "white",
+        "text-halo-color": "black",
+        "text-halo-width": 1
+        // "text-halo-blur": 4
+      },
+      layout: {
+        "text-font": ["Open Sans Regular"],
+        "text-field": "{name} ({line})",
+        "text-size": {
+          base: 12,
+          stops: [[9, 0], [12, 0], [14, 12], [17, 20]]
+        },
+        "text-anchor": "right",
+        "text-offset": [-1.5, 0]
+      }
+    });
+
+    map.addLayer(
+      {
+        'id': 'districtLayer1',
+        'type': 'fill',
+        'source': {
+          type: "geojson",
+          data: district_data
+        },
+        'layout': {},
+        'paint': {
+          'fill-color': '#5a3fc0',
+          'fill-opacity': 0.3
+        }
+      }
+    );
+
+    /* Given a query in the form "lng, lat" or "lat, lng"
+     * returns the matching geographic coordinate(s)
+     * as search results in carmen geojson format,
+     * https://github.com/mapbox/carmen/blob/master/carmen-geojson.md */
+
+
+    function findGeoByStationName(stationName){
+      for(key of Object.keys(stationNames)){
+        var index=0;
+        for(name_value of stationNames[key]){
+          if(name_value.toUpperCase()==stationName.toUpperCase()){  //ignore case
+            return [route_total_info[key].station_location[index],[key,index]];
+          }
+          index++;
+        }
+      }
+      return null;
+    }
+
+    var stationNameGeocoder = function (query) {
+      function coordinateFeature(lng, lat) {
+        return {
+            center: [lng, lat],
+            geometry: {
+                type: 'Point',
+                coordinates: [lng, lat]
+            },
+            place_name: query,
+            place_type: ['coordinate'],
+            properties: {},
+            type: 'Feature'
+        };
+      }
+
+      var matches = query.match(
+          /^[ ]*[Ss][Tt][Aa](\d+)$/i
+      );
+
+      if (matches) {
+        var station_info=findGeoByStationName(query);
+        if(!station_info){
+          return null;
+        }
+
+        var coord1 = station_info[0][0];
+        var coord2 = station_info[0][1];
+        var route_name=station_info[1][0];
+        var station_index=station_info[1][1];
+        
+        var geocodes = [];
+        var tempResultItem=coordinateFeature(coord1, coord2);
+        tempResultItem.place_name=route_name+"号线路第"+station_index+"站点";
+        geocodes.push(tempResultItem);
+        return geocodes;
+      }
+      return null;
+  };
+
+  // Add the control to the map.
+  map.addControl(
+      new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          localGeocoder: stationNameGeocoder,
+          zoom: 14,
+          placeholder: "请输入站点名称",
+          mapboxgl: mapboxgl,
+          localGeocoderOnly:true
+      })
+  );
+
+
+    map.addControl(new mapboxgl.NavigationControl());
+
+    map.addControl(draw);
+
+    map.on('draw.create', updateArea);
+    map.on('draw.delete', updateArea);
+    map.on('draw.update', updateArea);
+
+    // add subway icon for use
+    map.loadImage('./static/image/EXPERIENCE_JAPAN_PICTOGRAM/png/T_CHIKATETSU.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('subway_icon', image);
+    });
+
+    map.loadImage('./static/image/sticker/1.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('sticker1', image);
+    });
+
+    map.loadImage('./static/image/sticker/2.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('sticker2', image);
+    });
+
+
+    map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/popup.png', function(error, image) {
+      if (error) throw error;
+      map.addImage('board-image', image,
+      {
+        stretchX: [
+            [25, 55],
+            [85, 115]
+        ],
+        stretchY: [[25, 100]],
+        content: [25, 25, 115, 100],
+        pixelRatio: 2
+    }
+      );
+    });
+
+  var route_start_board_source={
+      'type': 'geojson',
+      'data': {
+          'type': 'FeatureCollection',
+          'features': [
+          ]
+      }
+  }
+
+  var point_feather_template={
+    'type': 'Feature',
+    'geometry': {
+        'type': 'Point',
+        'coordinates': []
+    },
+    'properties': {
+      'image-name': 'board-image',
+      'name': ""
+      }
+}
+
+  var temp_source=JSON.parse(JSON.stringify(route_start_board_source));
+
+  for(route_name of Object.keys(route_total_info)){
+    var start_point_geo=route_total_info[route_name].station_location[0];
+    var temp_single_source=JSON.parse(JSON.stringify(point_feather_template));
+    temp_single_source.geometry.coordinates=start_point_geo;
+    temp_single_source.properties.name="线路"+route_name+'\n起点'
+    temp_source.data.features.push(temp_single_source);
+  }
+
+  map.addSource('board-points', temp_source);
+
+
+  map.addLayer({
+      'id': 'board-points-layer',
+      'type': 'symbol',
+      'source': 'board-points',
+      'layout': {
+          'text-field': ['get', 'name'],
+          'icon-text-fit': "both",
+          'icon-image': ['get', 'image-name'],
+          'icon-allow-overlap': true,
+          'text-allow-overlap': true
+      }
+  });
+
+  temp_source=JSON.parse(JSON.stringify(route_start_board_source));
+
+  for(route_name of Object.keys(route_total_info)){
+    var start_point_geo=route_total_info[route_name].station_location[route_total_info[route_name].station_location.length-1];
+    var temp_single_source=JSON.parse(JSON.stringify(point_feather_template));
+    temp_single_source.geometry.coordinates=start_point_geo;
+    temp_single_source.properties.name="线路"+route_name+'\n终点'
+    temp_source.data.features.push(temp_single_source);
+  }
+
+  map.addSource('board-points-end', temp_source);
+
+
+
+  map.addLayer({
+      'id': 'board-points-end-layer',
+      'type': 'symbol',
+      'source': 'board-points-end',
+      'layout': {
+          'text-field': ['get', 'name'],
+          'icon-text-fit': "both",
+          'icon-image': ['get', 'image-name'],
+          'icon-allow-overlap': true,
+          'text-allow-overlap': true
+      }
+  });
+}
+
+
  
 function switchLayer(layer) {
   var layerId = layer.target.id;
+  map.remove();
+  map = new mapboxgl.Map({
+    preserveDrawingBuffer:true,
+    container: "map", // id of the element to serve as map
+    center: [ (maxBounds[0][0]+maxBounds[1][0])/2 , (maxBounds[0][1]+maxBounds[1][1])/2 ], // center of map
+    zoom: 11, // 14 for stops display
+    maxBounds: [
+      [maxBounds[0][0] - MAP_MARGIN_HON, maxBounds[0][1] - MAP_MARGIN_HON],
+      [maxBounds[1][0] + MAP_MARGIN_VER, maxBounds[1][1] + MAP_MARGIN_VER]
+    ],
+    // Options,
+    style: 'mapbox://styles/mapbox/' + layerId
+  });
+
   map.setStyle('mapbox://styles/mapbox/' + layerId);
+  map.on("load",reset_layer);
+
 }
  
 for (var i = 0; i < inputs.length; i++) {
